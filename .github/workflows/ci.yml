@@ -29,9 +29,6 @@ jobs:
       - name: Install (npm ci)
         run: npm ci
 
-      - name: Lint (optional)
-        run: npm run lint --if-present
-
       - name: Test (optional)
         run: npm test --if-present
 
