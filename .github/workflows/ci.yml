@@ -1,0 +1,48 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install (npm ci)
+        run: npm ci
+
+      - name: Lint (optional)
+        run: npm run lint --if-present
+
+      - name: Test (optional)
+        run: npm test --if-present
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload build artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: |
+            dist
+            build
