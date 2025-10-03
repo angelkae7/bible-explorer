@@ -29,6 +29,19 @@ export default function LandingPage() {
     }
   }, [navigate]);
 
+  // juste après openThenGo
+useEffect(() => {
+  const onKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openThenGo();
+    }
+  };
+  window.addEventListener("keydown", onKeyDown);
+  return () => window.removeEventListener("keydown", onKeyDown);
+}, [openThenGo]);
+
+
   // accessibilité clavier (Entrée / Espace)
   const onKey = useCallback(
     (e) => {
@@ -64,7 +77,7 @@ export default function LandingPage() {
       />
 
       {/* Carte de bienvenue */}
-      <section className="absolute left-6 top-6 z-20 max-w-[620px] rounded-2xl bg-white/80 p-5 backdrop-blur md:left-10 md:top-10">
+      <section className="absolute left-6 top-6 z-20 max-w-[500px] rounded-2xl bg-white/80 p-5 backdrop-blur md:left-10 md:top-10">
         <h1 className="mb-2 text-2xl font-semibold text-gray-900">
           Bible Explorer
         </h1>

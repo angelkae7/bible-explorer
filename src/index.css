@@ -113,3 +113,16 @@ button:focus-visible {
     }
     
     .reader-html p { margin: 0 0 1rem 0; }
+/* Scrollbar fine et discrète (Chrome/Edge) */
+.scrollbar-thin::-webkit-scrollbar { width: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.18);
+  border-radius: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+/* Focus visible sur les boutons (clavier) */
+button:focus-visible {
+  outline: 2px solid #4b9cff;
+  outline-offset: 2px;
+}
