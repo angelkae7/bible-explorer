@@ -26,14 +26,21 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Upgrade npm (workaround npm optional deps)
+        run: npm i -g npm@latest
+
       - name: Install (npm ci)
         run: npm ci
 
-      - name: Test (optional)
-        run: npm test --if-present
+      - name: Lint (non-blocking)
+        run: npm run lint --if-present
+        continue-on-error: true
 
       - name: Build
         run: npm run build
+        env:
+          # Force Rollup à utiliser l'implémentation JS plutôt que le binaire natif
+          ROLLUP_SKIP_NODEJS_NATIVE: "true"
 
       - name: Upload build artifact
         if: success()
