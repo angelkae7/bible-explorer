@@ -65,13 +65,13 @@ export default function BookDetailsPage() {
     <div style={styles.page}>
       <div style={styles.left}>
         <div style={{ width: "100%", height: "100%" }}>
-        <Canvas camera={{ position: [0, 0.4, 3], fov: 40 }}>
-          <ambientLight intensity={0.6} />
-          <directionalLight position={[2, 4, 3]} intensity={0.9} />
-          <Environment preset="studio" />
-          <Book3D book={book} idleFloat={false} hoverScale={1} glowIntensity={0} />
-          <OrbitControls enablePan={false} minDistance={2} maxDistance={6} />
-        </Canvas>
+          <Canvas camera={{ position: [0, 0.4, 3], fov: 40 }}>
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[2, 4, 3]} intensity={0.9} />
+            <Environment preset="studio" />
+            <Book3D book={book} idleFloat={false} hoverScale={1} glowIntensity={0} />
+            <OrbitControls enablePan={false} minDistance={2} maxDistance={6} />
+          </Canvas>
         </div>
 
         {/* Aide visuelle hover/clic */}
@@ -213,12 +213,12 @@ const styles = {
     overflow: "hidden", // évite le scroll global
   },
   left: {
-  position: "relative",
-  borderRight: "1px solid rgba(255,255,255,0.06)",
-  minWidth: 0,
-  height: "100vh",   // <---- ajoute ça
-  overflow: "hidden" // évite les débordements
-},
+    position: "relative",
+    borderRight: "1px solid rgba(255,255,255,0.06)",
+    minWidth: 0,
+    height: "100vh",   // <---- ajoute ça
+    overflow: "hidden" // évite les débordements
+  },
 
   sidebar: {
     display: "flex",
@@ -259,38 +259,38 @@ const styles = {
   },
 
   grid: {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(84px, 1fr))", // un peu plus large
-  gap: 12,
-},
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(84px, 1fr))", // un peu plus large
+    gap: 12,
+  },
 
-card: {
-  height: 82,                            // +10px
-  borderRadius: 14,
-  background: "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
-  border: "1px solid rgba(255,255,255,0.12)",
-  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 6px 18px rgba(0,0,0,0.20)",
-  cursor: "pointer",
-  display: "grid",
-  placeItems: "center",
-  position: "relative",
-  transition: "transform .12s ease, box-shadow .12s ease, border-color .12s ease",
-  outline: "none",
-},
+  card: {
+    height: 82,                            // +10px
+    borderRadius: 14,
+    background: "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
+    border: "1px solid rgba(255,255,255,0.12)",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 6px 18px rgba(0,0,0,0.20)",
+    cursor: "pointer",
+    display: "grid",
+    placeItems: "center",
+    position: "relative",
+    transition: "transform .12s ease, box-shadow .12s ease, border-color .12s ease",
+    outline: "none",
+  },
 
-cardNum: {
-  fontSize: 22,
-  fontWeight: 900,
-  letterSpacing: 0.2,
-},
+  cardNum: {
+    fontSize: 22,
+    fontWeight: 900,
+    letterSpacing: 0.2,
+  },
 
-cardHint: {
-  position: "absolute",
-  bottom: 7,
-  right: 10,
-  fontSize: 10,
-  opacity: 0.65,
-}
+  cardHint: {
+    position: "absolute",
+    bottom: 7,
+    right: 10,
+    fontSize: 10,
+    opacity: 0.65,
+  }
 
   // ... le reste inchangé ...
 };

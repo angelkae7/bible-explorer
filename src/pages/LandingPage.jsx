@@ -144,7 +144,7 @@ useEffect(() => {
             >
               <HolyBible
                 ref={bibleRef}
-                url="src/assets/holy-bible.glb"
+                url="/models/holy-bible.glb"
                 position={[0, 0, 0]}
                 rotation={[1, 0, .1]}
                 scale={7}

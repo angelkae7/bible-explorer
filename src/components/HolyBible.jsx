@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 const HolyBible = forwardRef(function HolyBible(
   {
-    url = "src/assets/holy-bible.glb",
+    url = "/models/holy-bible.glb",
     onPointerOver,
     onPointerOut,
     onClick,
@@ -116,4 +116,4 @@ const HolyBible = forwardRef(function HolyBible(
 export default HolyBible;
 
 // préchargement
-useGLTF.preload("src/assets/holy-bible.glb");
+useGLTF.preload("/models/holy-bible.glb");
