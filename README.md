@@ -30,10 +30,23 @@ Objectif : rendre la lecture de la Bible intuitive, immersive et accessible via 
 ---
 
 ## 🖼️ Schéma de fonctionnement
+### 🖼️ Schéma simplifié
 
-![Schéma de l’application](./docs/bible-explorer-schema-v1.png)
+```mermaid
+flowchart TD
+    U[👤 Utilisateur<br/>Navigateur] --> A[💻 Bible Explorer<br/>(React + R3F)]
+    A -->|fetch REST JSON| API[☁️ Scripture API<br/>(api.bible)]
 
-> Voir aussi la version [SVG vectorielle](./docs/bible-explorer-schema-v1.svg).
+    %% Sous-blocs dans l'application
+    subgraph A [💻 Bible Explorer]
+        L[LandingPage<br/>📖 Bible 3D]
+        B[BooksPage<br/>📚 Livres]
+        C[ChaptersPage<br/>🔢 Chapitres]
+        R[ReaderPage<br/>📜 Versets]
+
+        L --> B --> C --> R
+    end
+
 
 ---
 
