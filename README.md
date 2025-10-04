@@ -30,14 +30,12 @@ Objectif : rendre la lecture de la Bible intuitive, immersive et accessible via 
 ---
 
 ## 🖼️ Schéma de fonctionnement
-
 ## 🖼️ Schéma simplifié
 
 ```mermaid
 flowchart TD
-
-    U[Utilisateur - Navigateur] --> A[Bible Explorer - React + R3F]
-    A -->|fetch REST JSON| API[Scripture API - api.bible]
+    U[Utilisateur (navigateur)] --> A[Bible Explorer (React + R3F)]
+    A -->|fetch REST JSON| API[Scripture API (api.bible)]
 
     subgraph A [Bible Explorer]
         L[LandingPage - Bible 3D]
@@ -46,7 +44,6 @@ flowchart TD
         R[ReaderPage - Versets]
         L --> B --> C --> R
     end
-
 
 ---
 
