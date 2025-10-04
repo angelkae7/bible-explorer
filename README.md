@@ -1,7 +1,5 @@
 # 📖 Bible Explorer
 
-![Bible Explorer Banner](./public/banner.png)
-
 ## 🌍 Démo en ligne
 
 👉 [Accéder à la démo sur Netlify](https://angele-kaloi-bible-explorer.netlify.app)
