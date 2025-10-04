@@ -29,24 +29,6 @@ Objectif : rendre la lecture de la Bible intuitive, immersive et accessible via 
 
 ---
 
-## 🖼️ Schéma de fonctionnement
-## 🖼️ Schéma simplifié
-
-```mermaid
-flowchart TD
-    U[Utilisateur (navigateur)] --> A[Bible Explorer (React + R3F)]
-    A -->|fetch REST JSON| API[Scripture API (api.bible)]
-
-    subgraph A [Bible Explorer]
-        L[LandingPage - Bible 3D]
-        B[BooksPage - Livres]
-        C[ChaptersPage - Chapitres]
-        R[ReaderPage - Versets]
-        L --> B --> C --> R
-    end
-
----
-
 ## 🛠️ Stack technique
 
 - **React 18** + **Vite**
