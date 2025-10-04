@@ -30,7 +30,8 @@ Objectif : rendre la lecture de la Bible intuitive, immersive et accessible via 
 ---
 
 ## 🖼️ Schéma de fonctionnement
-### 🖼️ Schéma simplifié
+
+## 🖼️ Schéma simplifié
 
 ```mermaid
 flowchart TD
@@ -46,7 +47,7 @@ flowchart TD
 
         L --> B --> C --> R
     end
-
+```
 
 ---
 
