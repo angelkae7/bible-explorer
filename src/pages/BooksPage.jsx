@@ -8,7 +8,7 @@ export default function BooksPage() {
   const { listBooks } = useApi();
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState("");
-  const [view, setView] = useState("list"); // "3d" | "list"
+  const [view, setView] = useState("3d"); // "3d" | "list"
   const navigate = useNavigate();
 
   useEffect(() => {
